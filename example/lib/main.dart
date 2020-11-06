@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:flutter_applovin_max/flutter_applovin_max.dart';
+import 'package:flutter_applovin_max/banner.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
@@ -14,32 +11,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
   @override
   void initState() {
+    FlutterApplovinMax.init();
     super.initState();
-    initPlatformState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await FlutterApplovinMax.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+  listener(AppLovinAdListener event, bool isInter) {
+    print(event);
+    if (event == AppLovinAdListener.adReceived) {
+      FlutterApplovinMax.showInterstitial(interstitial: isInter);
     }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
 
   @override
@@ -49,8 +31,29 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              onPressed: () => FlutterApplovinMax.requestInterstitial(
+                  (AppLovinAdListener event) => listener(event, true),
+                  interstitial: true),
+              child: Text('Show Interstitial'),
+            ),
+            RaisedButton(
+              onPressed: () => FlutterApplovinMax.requestInterstitial(
+                  (AppLovinAdListener event) => listener(event, false),
+                  interstitial: true),
+              child: Text('Show Interstitial Reward'),
+            ),
+            BannerView((AppLovinAdListener event) => print(event),
+                BannerAdSize.banner),
+            BannerView(
+                (AppLovinAdListener event) => print(event), BannerAdSize.mrec),
+            BannerView((AppLovinAdListener event) => print(event),
+                BannerAdSize.leader),
+          ],
         ),
       ),
     );
