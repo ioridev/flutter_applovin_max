@@ -16,12 +16,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
-  listener(AppLovinAdListener event, bool isInter) {
-    print(event);
-    if (event == AppLovinAdListener.adReceived) {
-      FlutterApplovinMax.showInterstitial(interstitial: isInter);
-    }
-  }
+  listener(AppLovinAdListener event, bool isInter) {}
 
   @override
   Widget build(BuildContext context) {
@@ -35,16 +30,10 @@ class _MyAppState extends State<MyApp> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
-              onPressed: () => FlutterApplovinMax.requestInterstitial(
-                  (AppLovinAdListener event) => listener(event, true),
-                  interstitial: true),
-              child: Text('Show Interstitial'),
-            ),
-            RaisedButton(
-              onPressed: () => FlutterApplovinMax.requestInterstitial(
-                  (AppLovinAdListener event) => listener(event, false),
-                  interstitial: true),
-              child: Text('Show Interstitial Reward'),
+              onPressed: () => FlutterApplovinMax.showRewardVideo(
+                (AppLovinAdListener event) => listener(event, false),
+              ),
+              child: Text('Show Reward'),
             ),
           ],
         ),

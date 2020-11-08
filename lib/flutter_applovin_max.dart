@@ -40,38 +40,13 @@ class FlutterApplovinMax {
     }
   }
 
-  static Future<void> hasUserConsent({bool enable = true}) async {
-    try {
-      await _channel.invokeMethod('HasUserConsent', {'Enable': enable});
-    } catch (e) {
-      print(e.toString());
-    }
-  }
-
-  static Future<void> requestInterstitial(AppLovinListener listener,
-      {bool interstitial = true}) async {
+  static Future<void> showRewardVideo(
+    AppLovinListener listener,
+  ) async {
     try {
       _channel.setMethodCallHandler(
           (MethodCall call) async => handleMethod(call, listener));
-      await _channel
-          .invokeMethod('RequestInterstitial', {'IsInter': interstitial});
-    } catch (e) {
-      print(e.toString());
-    }
-  }
-
-  static Future<void> showInterstitial({bool interstitial = true}) async {
-    try {
-      await _channel
-          .invokeMethod('ShowInterstitial', {'IsInter': interstitial});
-    } catch (e) {
-      print(e.toString());
-    }
-  }
-
-  static Future<void> isAgeRestrictedUser({bool enable = true}) async {
-    try {
-      await _channel.invokeMethod('IsAgeRestrictedUser', {'Enable': enable});
+      await _channel.invokeMethod('RequestRewardVideo');
     } catch (e) {
       print(e.toString());
     }
