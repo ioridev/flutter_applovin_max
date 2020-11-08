@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_applovin_max/flutter_applovin_max.dart';
-import 'package:flutter_applovin_max/banner.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,12 +46,6 @@ class _MyAppState extends State<MyApp> {
                   interstitial: true),
               child: Text('Show Interstitial Reward'),
             ),
-            BannerView((AppLovinAdListener event) => print(event),
-                BannerAdSize.banner),
-            BannerView(
-                (AppLovinAdListener event) => print(event), BannerAdSize.mrec),
-            BannerView((AppLovinAdListener event) => print(event),
-                BannerAdSize.leader),
           ],
         ),
       ),
