@@ -1,6 +1,15 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## AppLovinSDK
+
+
+Copyright 2019 AppLovin Corp. All rights reserved.
+
+The AppLovin SDK is available under a commercial license (https://www.applovin.com/eula).
+
+
+
 ## flutter_applovin_max
 
 TODO: Add your license here.

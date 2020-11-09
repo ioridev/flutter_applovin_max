@@ -1,7 +1,7 @@
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/flutter_applovin_max
 DEFINES_MODULE = YES
 EXCLUDED_ARCHS[sdk=iphonesimulator*] = i386
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../Flutter"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../Flutter" "${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.14.6"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/flutter_applovin_max" "${PODS_ROOT}/Headers/Public"
 PODS_BUILD_DIR = ${BUILD_DIR}
