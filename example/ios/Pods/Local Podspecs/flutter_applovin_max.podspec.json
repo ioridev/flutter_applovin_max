@@ -24,7 +24,7 @@
     ]
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "8.0"
   },
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES",
