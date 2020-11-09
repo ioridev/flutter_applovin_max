@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_applovin_max/flutter_applovin_max.dart';
-import 'package:flutter_applovin_max/banner.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,16 +12,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    FlutterApplovinMax.init();
+    FlutterApplovinMax.init("YOUR_AD_UNIT_ID");
     super.initState();
   }
 
-  listener(AppLovinAdListener event, bool isInter) {
-    print(event);
-    if (event == AppLovinAdListener.adReceived) {
-      FlutterApplovinMax.showInterstitial(interstitial: isInter);
-    }
-  }
+  listener(AppLovinAdListener event) {}
 
   @override
   Widget build(BuildContext context) {
@@ -36,23 +30,11 @@ class _MyAppState extends State<MyApp> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
-              onPressed: () => FlutterApplovinMax.requestInterstitial(
-                  (AppLovinAdListener event) => listener(event, true),
-                  interstitial: true),
-              child: Text('Show Interstitial'),
+              onPressed: () => FlutterApplovinMax.showRewardVideo(
+                (AppLovinAdListener event) => listener(event),
+              ),
+              child: Text('Show Reward'),
             ),
-            RaisedButton(
-              onPressed: () => FlutterApplovinMax.requestInterstitial(
-                  (AppLovinAdListener event) => listener(event, false),
-                  interstitial: true),
-              child: Text('Show Interstitial Reward'),
-            ),
-            BannerView((AppLovinAdListener event) => print(event),
-                BannerAdSize.banner),
-            BannerView(
-                (AppLovinAdListener event) => print(event), BannerAdSize.mrec),
-            BannerView((AppLovinAdListener event) => print(event),
-                BannerAdSize.leader),
           ],
         ),
       ),

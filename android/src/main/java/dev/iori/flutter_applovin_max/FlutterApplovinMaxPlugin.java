@@ -1,9 +1,12 @@
 package dev.iori.flutter_applovin_max;
 
 import android.app.Activity;
+
 import android.content.Context;
+
 import androidx.annotation.NonNull;
-import com.applovin.sdk.AppLovinPrivacySettings;
+
+import com.applovin.sdk.AppLovinMediationProvider;
 import com.applovin.sdk.AppLovinSdk;
 import io.flutter.Log;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -16,11 +19,11 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.common.StandardMethodCodec;
-import io.flutter.plugin.platform.PlatformViewRegistry;
 
-public class FlutterApplovinMaxPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
+
+
+public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandler, ActivityAware {
     private static FlutterApplovinMaxPlugin instance;
-    private static Interstitial instanceInter;
     private static RewardedVideo instanceReward;
     private static Context context;
     private static MethodChannel channel;
@@ -32,7 +35,6 @@ public class FlutterApplovinMaxPlugin implements FlutterPlugin, MethodCallHandle
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-        this.RegistrarBanner(flutterPluginBinding.getFlutterEngine().getPlatformViewsController().getRegistry());
         this.onAttachedToEngine(flutterPluginBinding.getApplicationContext(), flutterPluginBinding.getBinaryMessenger());
     }
 
@@ -40,13 +42,9 @@ public class FlutterApplovinMaxPlugin implements FlutterPlugin, MethodCallHandle
         if (instance == null) {
             instance = new FlutterApplovinMaxPlugin();
         }
-        instance.RegistrarBanner(registrar.platformViewRegistry());
         instance.onAttachedToEngine(registrar.context(), registrar.messenger());
     }
 
-    public void RegistrarBanner(PlatformViewRegistry registry){
-        registry.registerViewFactory("/Banner", new BannerFactory());
-    }
 
     public void onAttachedToEngine(Context applicationContext, BinaryMessenger messenger) {
         if (channel != null) {
@@ -67,32 +65,16 @@ public class FlutterApplovinMaxPlugin implements FlutterPlugin, MethodCallHandle
         try {
             switch (call.method) {
                 case "Init":
-                    AppLovinSdk.initializeSdk(context);
+                    AppLovinSdk.getInstance(context).setMediationProvider( AppLovinMediationProvider.MAX );
+                    String unitId = call.argument("UnitId").toString();
+                    instanceReward.Init(unitId);
                     result.success(Boolean.TRUE);
                     break;
-                case "HasUserConsent":
-                    AppLovinPrivacySettings.setHasUserConsent((Boolean) call.argument("Enable"), context);
-                    result.success(Boolean.TRUE);
-                    break;
-                case "IsAgeRestrictedUser":
-                    AppLovinPrivacySettings.setIsAgeRestrictedUser((Boolean) call.argument("Enable"), context);
-                    result.success(Boolean.TRUE);
-                    break;
-                case "ShowInterstitial":
-                    if (call.argument("IsInter"))
-                        instanceInter.Show();
-                    else
+                    case "ShowRewardVideo":
                         instanceReward.Show();
                     result.success(Boolean.TRUE);
                     break;
-                case "RequestInterstitial":
-                    if (call.argument("IsInter"))
-                        instanceInter.Request();
-                    else
-                        instanceReward.Request();
-                    result.success(Boolean.TRUE);
-                    break;
-                default:
+            default:
                     result.notImplemented();
             }
         } catch (Exception err) {
@@ -124,11 +106,8 @@ public class FlutterApplovinMaxPlugin implements FlutterPlugin, MethodCallHandle
     @Override
     public void onAttachedToActivity(ActivityPluginBinding binding) {
         this.activity = binding.getActivity();
-        if (instance.instanceInter == null) {
-            instance.instanceInter = new Interstitial(binding.getActivity().getApplicationContext());
             instance.instanceReward = new RewardedVideo();
             Log.i("AppLovin Plugin", "Instances created");
-        }
     }
 
     @Override
