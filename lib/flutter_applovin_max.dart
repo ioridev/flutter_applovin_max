@@ -5,15 +5,15 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 enum AppLovinAdListener {
-  adReceived,
-  failedToReceiveAd,
+  adLoaded,
+  adLoadFailed,
   adDisplayed,
   adHidden,
   adClicked,
-  adOpenedFullscreen,
-  adClosedFullscreen,
-  adLeftApplication,
-  adFailedToDisplay
+  onAdDisplayFailed,
+  onRewardedVideoStarted,
+  onRewardedVideoCompleted,
+  onUserRewarded
 }
 
 typedef AppLovinListener(AppLovinAdListener listener);
@@ -21,15 +21,15 @@ typedef AppLovinListener(AppLovinAdListener listener);
 class FlutterApplovinMax {
   static final MethodChannel _channel = MethodChannel('flutter_applovin_max');
   static final Map<String, AppLovinAdListener> appLovinAdListener = {
-    'AdReceived': AppLovinAdListener.adReceived,
-    'FailedToReceiveAd': AppLovinAdListener.failedToReceiveAd,
+    'AdLoaded': AppLovinAdListener.adLoaded,
+    'AdLoadFailed': AppLovinAdListener.adLoadFailed,
     'AdDisplayed': AppLovinAdListener.adDisplayed,
     'AdHidden': AppLovinAdListener.adHidden,
     'AdClicked': AppLovinAdListener.adClicked,
-    'AdOpenedFullscreen': AppLovinAdListener.adOpenedFullscreen,
-    'AdClosedFullscreen': AppLovinAdListener.adClosedFullscreen,
-    'AdLeftApplication': AppLovinAdListener.adLeftApplication,
-    'AdFailedToDisplay': AppLovinAdListener.adFailedToDisplay,
+    'AdFailedToDisplay': AppLovinAdListener.onAdDisplayFailed,
+    'RewardedVideoStarted': AppLovinAdListener.onRewardedVideoStarted,
+    'RewardedVideoCompleted': AppLovinAdListener.onRewardedVideoCompleted,
+    'UserRewarded': AppLovinAdListener.onUserRewarded,
   };
 
   static Future<void> init() async {

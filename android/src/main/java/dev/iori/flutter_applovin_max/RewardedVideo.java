@@ -18,10 +18,8 @@ import java.util.Map;
 import io.flutter.Log;
 
 public class RewardedVideo implements MaxRewardedAdListener {
-
     private MaxRewardedAd RewardedAd;
     private int           retryAttempt;
-
 
 
     public void Show() {
@@ -40,25 +38,26 @@ public class RewardedVideo implements MaxRewardedAdListener {
     @Override
     public void onAdLoaded(MaxAd ad) {
         retryAttempt = 0;
+        FlutterApplovinMaxPlugin.getInstance().Callback("AdLoaded");
 
     }
 
     @Override
     public void onAdLoadFailed(final String adUnitId, final int errorCode) {
-        Log.e("AppLovin", "FailedToReceiveAd sdk error " + errorCode);
-        FlutterApplovinMaxPlugin.getInstance().Callback("FailedToReceiveAd");
+        Log.e("AppLovin", "AdLoadFailed sdk error " + errorCode);
+        FlutterApplovinMaxPlugin.getInstance().Callback("AdLoadFailed");
     }
 
     @Override
     public void onAdDisplayed(MaxAd ad) {
+        FlutterApplovinMaxPlugin.getInstance().Callback("AdDisplayed");
 
     }
 
     @Override
     public void onAdHidden(MaxAd ad) {
         FlutterApplovinMaxPlugin.getInstance().Callback("AdHidden");
-        this.RewardedAd.loadAd();
-
+        RewardedAd.loadAd();
     }
 
     @Override
@@ -70,22 +69,26 @@ public class RewardedVideo implements MaxRewardedAdListener {
     public void onAdDisplayFailed(MaxAd ad, int errorCode) {
         Log.e("AppLovin", "onAdDisplayFailed sdk error " + errorCode);
         FlutterApplovinMaxPlugin.getInstance().Callback("AdFailedToDisplay");
-
     }
 
 
     @Override
     public void onRewardedVideoStarted(MaxAd ad) {
+        FlutterApplovinMaxPlugin.getInstance().Callback("RewardedVideoStarted");
+
 
     }
 
     @Override
     public void onRewardedVideoCompleted(MaxAd ad) {
+        FlutterApplovinMaxPlugin.getInstance().Callback("RewardedVideoCompleted");
 
     }
 
     @Override
     public void onUserRewarded(MaxAd ad, MaxReward reward) {
+        FlutterApplovinMaxPlugin.getInstance().Callback("UserRewarded");
+
 
     }
 }
