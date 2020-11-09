@@ -1,6 +1,6 @@
 # flutter_applovin_max
 
-A new Flutter plugin.
+Flutter plugin for showing applovin MAX  mediation ads rewardvideo (Android & Ios).
 
 ## Getting Started
 
