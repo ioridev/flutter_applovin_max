@@ -25,17 +25,13 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              onPressed: () => FlutterApplovinMax.showRewardVideo(
-                (AppLovinAdListener event) => listener(event),
-              ),
-              child: Text('Show Reward'),
+        body: Center(
+          child: RaisedButton(
+            onPressed: () => FlutterApplovinMax.showRewardVideo(
+              (AppLovinAdListener event) => listener(event),
             ),
-          ],
+            child: Text('Show Reward Video'),
+          ),
         ),
       ),
     );
