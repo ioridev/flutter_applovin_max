@@ -16,12 +16,12 @@ Add inside the <application> tag.
 Android
 ```
 <meta-data android:name="applovin.sdk.key"
-    android:value="xxxx"  />
+    android:value="YOUR_SDK_KEY"/>
 ```
 IOS info.plist
 ```
 <key>AppLovinSdkKey</key
-<string>YOUR_KEY</string>
+<string>YOUR_SDK_KEY</string>
 ```
 
 ## Using this plugin
