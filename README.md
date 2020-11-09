@@ -10,7 +10,7 @@ Android
 <meta-data android:name="applovin.sdk.key"
     android:value="xxxx"  />
 ```
-IOS
+IOS info.plist
 ```
 <key>AppLovinSdkKey</key
 <string>YOUR_KEY</string>
