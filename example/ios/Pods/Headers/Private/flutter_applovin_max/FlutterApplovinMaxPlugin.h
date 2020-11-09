@@ -1,0 +1,1 @@
+../../../../.symlinks/plugins/flutter_applovin_max/ios/Classes/FlutterApplovinMaxPlugin.h

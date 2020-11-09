@@ -1,0 +1,6 @@
+module flutter_applovin_max {
+  umbrella header "flutter_applovin_max-umbrella.h"
+
+  export *
+  module * { export * }
+}
