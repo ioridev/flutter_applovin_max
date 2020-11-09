@@ -8,7 +8,7 @@
 @end
 @implementation FlutterApplovinMaxPlugin
 
-
+FlutterMethodChannel* globalMethodChannel;
 
 - (void)initApplovin:(FlutterMethodCall*)call{
     NSString* unitId = call.arguments[@"UnitId"];
@@ -30,6 +30,7 @@
                                      binaryMessenger:[registrar messenger]];
     FlutterApplovinMaxPlugin* instance = [[FlutterApplovinMaxPlugin alloc] init];
     [registrar addMethodCallDelegate:instance channel:channel];
+    globalMethodChannel = channel;
 }
 
 
@@ -51,15 +52,16 @@
 }
 
 - (void)didClickAd:(nonnull MAAd *)ad {
-    
+    [globalMethodChannel invokeMethod:@"AdClicked" arguments: nil];
 }
 
 - (void)didDisplayAd:(nonnull MAAd *)ad {
     
+    [globalMethodChannel invokeMethod:@"AdDisplayed" arguments: nil];
 }
 
 - (void)didFailToDisplayAd:(nonnull MAAd *)ad withErrorCode:(NSInteger)errorCode {
-    
+    [globalMethodChannel invokeMethod:@"AdFailedToDisplay" arguments: nil];
 }
 
 - (void)didFailToLoadAdForAdUnitIdentifier:(nonnull NSString *)adUnitIdentifier withErrorCode:(NSInteger)errorCode {
@@ -67,23 +69,21 @@
 }
 
 - (void)didHideAd:(nonnull MAAd *)ad {
-    
+    [globalMethodChannel invokeMethod:@"AdHidden" arguments: nil];
 }
 
 - (void)didLoadAd:(nonnull MAAd *)ad {
-    
+    [globalMethodChannel invokeMethod:@"AdLoaded" arguments: nil];
 }
 
 - (void)didCompleteRewardedVideoForAd:(nonnull MAAd *)ad {
-    
+    [globalMethodChannel invokeMethod:@"RewardedVideoCompleted" arguments: nil];
 }
 
 - (void)didRewardUserForAd:(nonnull MAAd *)ad withReward:(nonnull MAReward *)reward {
-    
-}
+    [globalMethodChannel invokeMethod:@"UserRewarded" arguments: nil];}
 
 - (void)didStartRewardedVideoForAd:(nonnull MAAd *)ad {
-    
-}
+    [globalMethodChannel invokeMethod:@"RewardedVideoStarted" arguments: nil];}
 
 @end
