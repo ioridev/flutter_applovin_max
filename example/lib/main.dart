@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    FlutterApplovinMax.init();
+    FlutterApplovinMax.init("YOUR_AD_UNIT_ID");
     super.initState();
   }
 
@@ -31,8 +31,8 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             RaisedButton(
               onPressed: () => FlutterApplovinMax.showRewardVideo(
-                  (AppLovinAdListener event) => listener(event),
-                  "YOUR_AD_UNIT_ID"),
+                (AppLovinAdListener event) => listener(event),
+              ),
               child: Text('Show Reward'),
             ),
           ],

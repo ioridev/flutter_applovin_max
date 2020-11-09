@@ -32,20 +32,19 @@ class FlutterApplovinMax {
     'UserRewarded': AppLovinAdListener.onUserRewarded,
   };
 
-  static Future<void> init() async {
+  static Future<void> init(String unitId) async {
     try {
-      await _channel.invokeMethod('Init');
+      await _channel.invokeMethod('Init', {'UnitId': unitId});
     } catch (e) {
       print(e.toString());
     }
   }
 
-  static Future<void> showRewardVideo(
-      AppLovinListener listener, String unitId) async {
+  static Future<void> showRewardVideo(AppLovinListener listener) async {
     try {
       _channel.setMethodCallHandler(
           (MethodCall call) async => handleMethod(call, listener));
-      await _channel.invokeMethod('RequestRewardVideo', {'UnitId': unitId});
+      await _channel.invokeMethod('ShowRewardVideo');
     } catch (e) {
       print(e.toString());
     }
