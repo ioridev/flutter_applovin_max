@@ -28,3 +28,7 @@ IOS info.plist
 see directory example 
 
 Visit [applovin MAX](https://www.applovin.com/max/) website to know more 
+
+## このプラグインについて  
+このプラグインは [applovin MAX](https://www.applovin.com/max/)のリワードビデオをFlutterアプリで利用できるようにネイティブSDKを統合します。
+これにより Flutter アプリでメディエーション機能を利用したリワード動画を実装できます。
