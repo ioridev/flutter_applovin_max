@@ -31,8 +31,8 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             RaisedButton(
               onPressed: () => FlutterApplovinMax.showRewardVideo(
-                (AppLovinAdListener event) => listener(event, false),
-              ),
+                  (AppLovinAdListener event) => listener(event, false),
+                  "YOUR_AD_UNIT_ID"),
               child: Text('Show Reward'),
             ),
           ],

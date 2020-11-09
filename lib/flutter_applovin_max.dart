@@ -41,12 +41,11 @@ class FlutterApplovinMax {
   }
 
   static Future<void> showRewardVideo(
-    AppLovinListener listener,
-  ) async {
+      AppLovinListener listener, String unitId) async {
     try {
       _channel.setMethodCallHandler(
           (MethodCall call) async => handleMethod(call, listener));
-      await _channel.invokeMethod('RequestRewardVideo');
+      await _channel.invokeMethod('RequestRewardVideo', {'UnitId': unitId});
     } catch (e) {
       print(e.toString());
     }

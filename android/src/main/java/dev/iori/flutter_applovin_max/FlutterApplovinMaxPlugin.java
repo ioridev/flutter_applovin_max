@@ -68,9 +68,8 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
                     AppLovinSdk.getInstance(context).setMediationProvider( AppLovinMediationProvider.MAX );
                     result.success(Boolean.TRUE);
                     break;
-                    
                     case "RequestRewardVideo":
-                        instanceReward.Show();
+                        instanceReward.Show(call.argument("UnitId"));
                     result.success(Boolean.TRUE);
                     break;
             default:

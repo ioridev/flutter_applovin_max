@@ -22,8 +22,8 @@ public class RewardedVideo implements MaxRewardedAdListener {
     private int           retryAttempt;
 
 
-    public void Show() {
-        RewardedAd = MaxRewardedAd.getInstance( "unit_id", FlutterApplovinMaxPlugin.getInstance().activity );
+    public void Show(String unitId) {
+        RewardedAd = MaxRewardedAd.getInstance(unitId, FlutterApplovinMaxPlugin.getInstance().activity );
         RewardedAd.setListener( this );
         RewardedAd.loadAd();
         try {
