@@ -42,7 +42,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>AppLovinSdkKey</key>
-	<string>Tae2sTzPB2xWq</string>
+	<string>YOUR_SDK_KEY</string>
     <key>SKAdNetworkIdentifier</key>
     <string>2U9PT9HC89.skadnetwork</string>
     <key>SKAdNetworkIdentifier</key>
@@ -165,8 +165,6 @@
     <string>mls7yz5dvl.skadnetwork</string>
     <key>SKAdNetworkIdentifier</key>
     <string>zmvfpc5aq8.skadnetwork</string>
-    <key>SKAdNetworkIdentifier</key>
-    <string>424M5254LK.skadnetwork</string>
     <key>SKAdNetworkIdentifier</key>
     <string>ECPZ2SRF59.skadnetwork</string>
     <key>SKAdNetworkIdentifier</key>
