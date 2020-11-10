@@ -106,7 +106,8 @@ IOS info.plist
     </dict>
 </array>
 <key>GADApplicationIdentifier</key>
-<string>ca-app-pub-3940256099942544~1458002511</string>```
+<string>ca-app-pub-3940256099942544~1458002511</string>
+```
 
 ## Using this plugin
 see directory example 
