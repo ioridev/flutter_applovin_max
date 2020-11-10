@@ -62,14 +62,21 @@ FlutterMethodChannel* globalMethodChannel;
 
 - (void)didFailToDisplayAd:(nonnull MAAd *)ad withErrorCode:(NSInteger)errorCode {
     [globalMethodChannel invokeMethod:@"AdFailedToDisplay" arguments: nil];
+    [self.rewardedAd loadAd];
 }
 
 - (void)didFailToLoadAdForAdUnitIdentifier:(nonnull NSString *)adUnitIdentifier withErrorCode:(NSInteger)errorCode {
+    self.retryAttempt++;
+    NSInteger delaySec = pow(2, MIN(6, self.retryAttempt));
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delaySec * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self.rewardedAd loadAd];
+    });
 }
 
 - (void)didHideAd:(nonnull MAAd *)ad {
     [globalMethodChannel invokeMethod:@"AdHidden" arguments: nil];
+    [self.rewardedAd loadAd];
 }
 
 - (void)didLoadAd:(nonnull MAAd *)ad {
