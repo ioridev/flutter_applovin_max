@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_applovin_max'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'A new Flutter plugin.'
   s.description      = <<-DESC
 A new Flutter plugin.
@@ -23,9 +23,7 @@ A new Flutter plugin.
   s.dependency 'AppLovinMediationByteDanceAdapter'
   s.dependency 'AppLovinMediationSmaatoAdapter'
   s.dependency 'AppLovinMediationTapjoyAdapter'
-  s.dependency 'AppLovinMediationVerizonAdsAdapter'
   s.dependency 'AppLovinMediationVungleAdapter'
-  s.dependency 'AppLovinMediationAmazonAdapter'
   s.dependency 'AppLovinMediationChartboostAdapter'
   s.dependency 'AppLovinMediationFyberAdapter'
   s.dependency 'AppLovinMediationGoogleAdapter'
@@ -35,7 +33,6 @@ A new Flutter plugin.
   s.dependency 'AppLovinMediationMaioAdapter'
   s.dependency 'AppLovinMediationMyTargetAdapter'
   s.dependency 'AppLovinMediationNendAdapter'
-  s.dependency 'AppLovinMediationSnapAdapter'
   s.dependency 'AppLovinMediationTencentGDTAdapter'
   s.dependency 'AppLovinMediationUnityAdsAdapter'
   s.dependency 'AppLovinMediationYandexAdapter'
