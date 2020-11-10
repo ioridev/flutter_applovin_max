@@ -16,7 +16,12 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
-  listener(AppLovinAdListener event) {}
+  listener(AppLovinAdListener event) {
+    print(event);
+    if (event == AppLovinAdListener.onRewardedVideoCompleted) {
+      print('👍get reward');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +33,7 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: RaisedButton(
             onPressed: () => FlutterApplovinMax.showRewardVideo(
-              (AppLovinAdListener event) => listener(event),
-            ),
+                (AppLovinAdListener event) => listener(event)),
             child: Text('Show Reward Video'),
           ),
         ),
