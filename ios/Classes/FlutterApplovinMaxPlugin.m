@@ -38,11 +38,11 @@ FlutterMethodChannel* globalMethodChannel;
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
     if ([@"Init" isEqualToString: call.method]) {
         [self initApplovin:call];
-
+        result([NSNumber numberWithBool:YES]);
     }else if([@"ShowRewardVideo" isEqualToString: call.method]){
-        if ( [self.rewardedAd isReady] )
-        {
+        if ( [self.rewardedAd isReady] ) {
             [self.rewardedAd showAd];
+            result([NSNumber numberWithBool:YES]);
         }
     }
     else {
