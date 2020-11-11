@@ -16,6 +16,14 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "https://adcolony.bintray.com/AdColony" }
+        maven { url "https://s3.amazonaws.com/smaato-sdk-releases/" }
+        maven { url "https://chartboostmobile.bintray.com/Chartboost" }
+        maven { url "https://raw.githubusercontent.com/HyprMXMobile/Android-SDKs/master" }
+        maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
+        maven { url "https://imobile-maio.github.io/maven" }
+        maven { url "http://fan-adn.github.io/nendSDK-Android-lib/library" }
+        maven { url "https://maven.ogury.co" }
     }
 }
 
@@ -34,4 +42,22 @@ android {
 
 dependencies {
     implementation 'com.applovin:applovin-sdk:+'
+    implementation 'com.applovin.mediation:adcolony-adapter:+'
+    implementation 'com.applovin.mediation:facebook-adapter:+'
+    implementation 'com.android.support:recyclerview-v7:28.+'
+    implementation 'com.android.support:appcompat-v7:28.+'
+    implementation 'com.applovin.mediation:bytedance-adapter:+'
+    implementation 'com.applovin.mediation:smaato-adapter:+'
+    implementation 'com.applovin.mediation:tapjoy-adapter:+'
+    implementation 'com.applovin.mediation:chartboost-adapter:+'
+    implementation 'com.google.android.gms:play-services-base:16.1.0'
+    implementation 'com.applovin.mediation:google-adapter:+'
+    implementation 'com.applovin.mediation:google-ad-manager-adapter:+'
+    implementation 'com.applovin.mediation:hyprmx-adapter:+'
+    implementation 'com.applovin.mediation:ironsource-adapter:+'
+    implementation 'com.applovin.mediation:maio-adapter:+'
+    implementation 'com.applovin.mediation:nend-adapter:+'
+    implementation 'com.applovin.mediation:ogury-presage-adapter:+'
+    implementation 'com.applovin.mediation:unityads-adapter:+'
+    implementation 'com.applovin.mediation:yandex-adapter:+'
 }
