@@ -40,5 +40,5 @@ A new Flutter plugin.
   s.platform = :ios, '9.0'
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = {  'ONLY_ACTIVE_ARCH' => 'YES'  }
+  # s.pod_target_xcconfig = {  'ONLY_ACTIVE_ARCH' => 'YES'  }
 end
