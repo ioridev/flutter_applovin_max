@@ -108,6 +108,31 @@ IOS info.plist
 <key>GADApplicationIdentifier</key>
 <string>ca-app-pub-3940256099942544~1458002511</string>
 ```
+## Preparing Mediated Networks  
+### IOS
+The following SDK is included in the ios plugin.　　
+```  
+AdColony  
+Facebook  
+InMobi  
+ByteDance  
+Smaato  
+Tapjoy  
+Vungle  
+Chartboost  
+Fyber  
+Google  
+IronSource  
+nMaio  
+MyTarget  
+Nend  
+TencentGDT  
+UnityAds  
+Yandex  
+```
+### Android
+For Android, refer to the document and add it to the app  
+[https://dash.applovin.com/documentation/mediation/android/mediation-adapters](https://dash.applovin.com/documentation/mediation/android/mediation-adapters)  
 
 ## Using this plugin
 see directory example 
