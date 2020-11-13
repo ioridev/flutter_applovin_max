@@ -28,7 +28,6 @@ A new Flutter plugin.
   s.dependency 'AppLovinMediationFyberAdapter'
   s.dependency 'AppLovinMediationGoogleAdapter'
   s.dependency 'AppLovinMediationGoogleAdManagerAdapter'
-  s.dependency 'AppLovinMediationHyprMXAdapter'
   s.dependency 'AppLovinMediationIronSourceAdapter'
   s.dependency 'AppLovinMediationMaioAdapter'
   s.dependency 'AppLovinMediationMyTargetAdapter'
