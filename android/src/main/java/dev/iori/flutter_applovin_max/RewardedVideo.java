@@ -1,18 +1,10 @@
 package dev.iori.flutter_applovin_max;
 
-import com.applovin.adview.AppLovinIncentivizedInterstitial;
-import com.applovin.sdk.AppLovinAd;
-import com.applovin.sdk.AppLovinAdClickListener;
-import com.applovin.sdk.AppLovinAdDisplayListener;
-import com.applovin.sdk.AppLovinAdLoadListener;
-import com.applovin.sdk.AppLovinAdRewardListener;
-import com.applovin.sdk.AppLovinAdVideoPlaybackListener;
 import com.applovin.mediation.MaxAd;
 import com.applovin.mediation.MaxReward;
 import com.applovin.mediation.MaxRewardedAdListener;
 import com.applovin.mediation.ads.MaxRewardedAd;
 
-import java.util.Map;
 
 import io.flutter.Log;
 
