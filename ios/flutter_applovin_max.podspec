@@ -31,7 +31,6 @@ A new Flutter plugin.
   s.dependency 'AppLovinMediationIronSourceAdapter'
   s.dependency 'AppLovinMediationMaioAdapter'
   s.dependency 'AppLovinMediationMyTargetAdapter'
-  s.dependency 'AppLovinMediationNendAdapter'
   s.dependency 'AppLovinMediationTencentGDTAdapter'
   s.dependency 'AppLovinMediationUnityAdsAdapter'
   s.dependency 'AppLovinMediationYandexAdapter'
