@@ -18,10 +18,12 @@ class _MyAppState extends State<MyApp> {
 
   listener(AppLovinAdListener event) {
     print(event);
-    if (event == AppLovinAdListener.onRewardedVideoCompleted) {
+    if (event == AppLovinAdListener.onUserRewarded) {
       print('👍get reward');
     }
   }
+
+  bool isRewardedVideoAvailable = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +34,14 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: RaisedButton(
-            onPressed: () => FlutterApplovinMax.showRewardVideo(
-                (AppLovinAdListener event) => listener(event)),
+            onPressed: () async {
+              isRewardedVideoAvailable =
+                  await FlutterApplovinMax.isLoaded(listener);
+              if (isRewardedVideoAvailable) {
+                FlutterApplovinMax.showRewardVideo(
+                    (AppLovinAdListener event) => listener(event));
+              }
+            },
             child: Text('Show Reward Video'),
           ),
         ),

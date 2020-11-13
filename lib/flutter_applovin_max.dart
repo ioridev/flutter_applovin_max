@@ -50,6 +50,10 @@ class FlutterApplovinMax {
     }
   }
 
+  static Future<bool> isLoaded(AppLovinListener listener) async {
+    return await _channel.invokeMethod('IsLoaded');
+  }
+
   static Future<void> handleMethod(
       MethodCall call, AppLovinListener listener) async {
     listener(appLovinAdListener[call.method]);

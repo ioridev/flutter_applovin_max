@@ -74,7 +74,11 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
                         instanceReward.Show();
                     result.success(Boolean.TRUE);
                     break;
-            default:
+                case "IsLoaded":
+                    Boolean isLoaded = instanceReward.IsLoaded();
+                    result.success(isLoaded);
+                    break;
+                default:
                     result.notImplemented();
             }
         } catch (Exception err) {
@@ -106,8 +110,8 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
     @Override
     public void onAttachedToActivity(ActivityPluginBinding binding) {
         this.activity = binding.getActivity();
-            instance.instanceReward = new RewardedVideo();
-            Log.i("AppLovin Plugin", "Instances created");
+        instance.instanceReward = new RewardedVideo();
+        Log.i("AppLovin Plugin", "Instances created");
     }
 
     @Override
@@ -120,5 +124,6 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
     }
 
     @Override
-    public void onDetachedFromActivity() { }
+    public void onDetachedFromActivity() {
+    }
 }
