@@ -132,6 +132,19 @@ Yandex
 ### Android
 For Android, refer to the document and add it to the app  
 [https://dash.applovin.com/documentation/mediation/android/mediation-adapters](https://dash.applovin.com/documentation/mediation/android/mediation-adapters)  
+#### important point  
+When installing the iron source, the following error is output.  
+`Suggestion: add 'tools:replace="android:label"' to <application> element at AndroidManifest.xml:16:5-39:19 to override.`  
+You could, as the error says, add tools:replace="android:label" to your <application> node in your manifest  
+See the example for [flutter_applovin_max/example/Android](https://github.com/ioridev/flutter_applovin_max/blob/main/example/android/app/src/main/AndroidManifest.xml)  
+``` <application tools:replace="android:label"
+        android:name="io.flutter.app.FlutterApplication"
+        android:label="flutter_applovin_max_example"
+        android:icon="@mipmap/ic_launcher">
+```  
+add schemas xmlns:tools="http://schemas.android.com/tools"  
+`<manifest xmlns:android="http://schemas.android.com/apk/res/android"package="dev.iori.flutter_applovin_max_example" xmlns:tools="http://schemas.android.com/tools">`  
+
 
 ## Using this plugin
 see directory example 
