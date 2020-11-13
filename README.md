@@ -125,7 +125,6 @@ Google
 IronSource  
 nMaio  
 MyTarget  
-Nend  
 TencentGDT  
 UnityAds  
 Yandex  
