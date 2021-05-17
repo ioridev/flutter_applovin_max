@@ -16,11 +16,13 @@ enum AppLovinAdListener {
   onUserRewarded
 }
 
-typedef AppLovinListener(AppLovinAdListener listener);
+typedef AppLovinListener = Function(AppLovinAdListener listener);
 
 class FlutterApplovinMax {
-  static final MethodChannel _channel = MethodChannel('flutter_applovin_max');
-  static final Map<String, AppLovinAdListener> appLovinAdListener = {
+  FlutterApplovinMax._();
+
+  static const MethodChannel _channel = MethodChannel('flutter_applovin_max');
+  static final Map<String, AppLovinAdListener> appLovinAdListener = <String, AppLovinAdListener>{
     'AdLoaded': AppLovinAdListener.adLoaded,
     'AdLoadFailed': AppLovinAdListener.adLoadFailed,
     'AdDisplayed': AppLovinAdListener.adDisplayed,
@@ -34,7 +36,7 @@ class FlutterApplovinMax {
 
   static Future<void> init(String unitId) async {
     try {
-      await _channel.invokeMethod('Init', {'UnitId': unitId});
+      await _channel.invokeMethod<void>('Init', <String, dynamic>{'UnitId': unitId});
     } catch (e) {
       print(e.toString());
     }
@@ -42,9 +44,8 @@ class FlutterApplovinMax {
 
   static Future<void> showRewardVideo(AppLovinListener listener) async {
     try {
-      _channel.setMethodCallHandler(
-          (MethodCall call) async => handleMethod(call, listener));
-      await _channel.invokeMethod('ShowRewardVideo');
+      _channel.setMethodCallHandler((MethodCall call) async => handleMethod(call, listener));
+      await _channel.invokeMethod<void>('ShowRewardVideo');
     } catch (e) {
       print(e.toString());
     }
@@ -54,8 +55,7 @@ class FlutterApplovinMax {
     return await _channel.invokeMethod('IsLoaded');
   }
 
-  static Future<void> handleMethod(
-      MethodCall call, AppLovinListener listener) async {
+  static Future<void> handleMethod(MethodCall call, AppLovinListener listener) async {
     listener(appLovinAdListener[call.method]);
   }
 }
