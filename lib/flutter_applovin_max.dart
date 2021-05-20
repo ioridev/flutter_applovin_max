@@ -16,7 +16,7 @@ enum AppLovinAdListener {
   onUserRewarded
 }
 
-typedef AppLovinListener = Function(AppLovinAdListener listener);
+typedef AppLovinListener = Function(AppLovinAdListener? listener);
 
 class FlutterApplovinMax {
   FlutterApplovinMax._();
@@ -51,7 +51,7 @@ class FlutterApplovinMax {
     }
   }
 
-  static Future<bool> isLoaded(AppLovinListener listener) async {
+  static Future<bool?> isLoaded(AppLovinListener listener) async {
     return await _channel.invokeMethod('IsLoaded');
   }
 
