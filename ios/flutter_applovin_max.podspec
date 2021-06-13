@@ -34,7 +34,7 @@ A new Flutter plugin.
   s.dependency 'AppLovinMediationTencentGDTAdapter'
   s.dependency 'AppLovinMediationUnityAdsAdapter'
   s.dependency 'AppLovinMediationYandexAdapter'
-
+  s.static_framework = true
   s.platform = :ios, '9.0'
 
 end

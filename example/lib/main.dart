@@ -12,11 +12,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    FlutterApplovinMax.init("YOUR_AD_UNIT_ID");
+    FlutterApplovinMax.init('YOUR_AD_UNIT_ID');
     super.initState();
   }
 
-  listener(AppLovinAdListener event) {
+  void listener(AppLovinAdListener event) {
     print(event);
     if (event == AppLovinAdListener.onUserRewarded) {
       print('👍get reward');
@@ -33,16 +33,14 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: RaisedButton(
+          child: TextButton(
             onPressed: () async {
-              isRewardedVideoAvailable =
-                  await FlutterApplovinMax.isLoaded(listener);
+              isRewardedVideoAvailable = await FlutterApplovinMax.isLoaded(listener);
               if (isRewardedVideoAvailable) {
-                FlutterApplovinMax.showRewardVideo(
-                    (AppLovinAdListener event) => listener(event));
+                FlutterApplovinMax.showRewardVideo((AppLovinAdListener event) => listener(event));
               }
             },
-            child: Text('Show Reward Video'),
+            child: const Text('Show Reward Video'),
           ),
         ),
       ),
