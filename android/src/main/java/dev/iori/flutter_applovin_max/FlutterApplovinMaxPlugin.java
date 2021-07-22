@@ -25,6 +25,7 @@ import io.flutter.plugin.common.StandardMethodCodec;
 public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandler, ActivityAware {
     private static FlutterApplovinMaxPlugin instance;
     private static RewardedVideo instanceReward;
+    private static InterstitialVideo instanceInter;
     private static Context context;
     private static MethodChannel channel;
     public static Activity activity;
@@ -64,7 +65,8 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
         try {
             switch (call.method) {
-                case "Init":
+                /* Reward */
+                case "InitRewardAd":
                     AppLovinSdk.getInstance(context).setMediationProvider( AppLovinMediationProvider.MAX );
                     String unitId = call.argument("UnitId").toString();
                     instanceReward.Init(unitId);
@@ -74,9 +76,22 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
                         instanceReward.Show();
                     result.success(Boolean.TRUE);
                     break;
-                case "IsLoaded":
+                case "IsRewardLoaded":
                     Boolean isLoaded = instanceReward.IsLoaded();
                     result.success(isLoaded);
+                    break;
+                /* Inter */
+                case "InitInterAd":
+                    AppLovinSdk.getInstance(context).setMediationProvider( AppLovinMediationProvider.MAX );
+                    instanceInter.Init(call.argument("UnitId").toString());
+                    result.success(Boolean.TRUE);
+                    break;
+                case "ShowInterVideo":
+                    instanceInter.Show();
+                    result.success(Boolean.TRUE);
+                    break;
+                case "IsInterLoaded":
+                    result.success(instanceInter.IsLoaded());
                     break;
                 default:
                     result.notImplemented();
@@ -111,6 +126,7 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
     public void onAttachedToActivity(ActivityPluginBinding binding) {
         this.activity = binding.getActivity();
         instance.instanceReward = new RewardedVideo();
+        instance.instanceInter = new InterstitialVideo();
         Log.i("AppLovin Plugin", "Instances created");
     }
 
