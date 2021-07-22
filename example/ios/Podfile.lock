@@ -1,9 +1,203 @@
 PODS:
-  - AppLovinSDK (6.14.6)
+  - AdColony (4.6.0)
+  - Ads-Global/BUAdSDK (3.4.4.3):
+    - Ads-Global/BUFoundation
+    - Ads-Global/International
+  - Ads-Global/BUFoundation (3.4.4.3)
+  - Ads-Global/Domestic (3.4.4.3)
+  - Ads-Global/International (3.4.4.3)
+  - AppLovinMediationAdColonyAdapter (4.6.1.0.1):
+    - AdColony (= 4.6.0)
+    - AppLovinSDK
+  - AppLovinMediationByteDanceAdapter (3.4.4.3.0):
+    - Ads-Global/BUAdSDK (= 3.4.4.3)
+    - Ads-Global/Domestic (= 3.4.4.3)
+    - AppLovinSDK
+  - AppLovinMediationChartboostAdapter (8.4.2.0):
+    - AppLovinSDK
+    - ChartboostSDK (= 8.4.2)
+  - AppLovinMediationFacebookAdapter (6.5.1.0):
+    - AppLovinSDK
+    - FBAudienceNetwork (= 6.5.1)
+  - AppLovinMediationFyberAdapter (7.8.3.2):
+    - AppLovinSDK
+    - Fyber_Marketplace_SDK (= 7.8.1)
+  - AppLovinMediationGoogleAdapter (8.7.0.0):
+    - AppLovinSDK
+    - Google-Mobile-Ads-SDK (= 8.7.0)
+  - AppLovinMediationGoogleAdManagerAdapter (8.7.0.0):
+    - AppLovinSDK
+    - Google-Mobile-Ads-SDK (= 8.7.0)
+  - AppLovinMediationInMobiAdapter (9.1.7.0):
+    - AppLovinSDK
+    - InMobiSDK/Core (= 9.1.7)
+  - AppLovinMediationIronSourceAdapter (7.1.6.1.0):
+    - AppLovinSDK
+    - IronSourceSDK (= 7.1.6.1)
+  - AppLovinMediationMaioAdapter (1.5.7.1):
+    - AppLovinSDK
+    - MaioSDK (= 1.5.6)
+  - AppLovinMediationMyTargetAdapter (5.12.0.1):
+    - AppLovinSDK
+    - myTargetSDK (= 5.11.1)
+  - AppLovinMediationSmaatoAdapter (21.6.14.0):
+    - AppLovinSDK
+    - smaato-ios-sdk (= 21.6.14)
+    - smaato-ios-sdk/InApp (= 21.6.14)
+  - AppLovinMediationTapjoyAdapter (12.8.1.0):
+    - AppLovinSDK
+    - TapjoySDK (= 12.8.1)
+  - AppLovinMediationTencentGDTAdapter (4.12.4.2):
+    - AppLovinSDK
+    - GDTMobSDK (= 4.12.3)
+  - AppLovinMediationUnityAdsAdapter (3.7.2.0):
+    - AppLovinSDK
+    - UnityAds (= 3.7.2)
+  - AppLovinMediationVungleAdapter (6.9.2.1):
+    - AppLovinSDK
+    - VungleSDK-iOS (= 6.8.1)
+  - AppLovinMediationYandexAdapter (2.20.0.1):
+    - AppLovinSDK
+    - YandexMobileAds (= 2.20.0)
+  - AppLovinSDK (10.3.2)
+  - ChartboostSDK (8.4.2)
+  - FBAudienceNetwork (6.5.1):
+    - FBSDKCoreKit_Basics
+  - FBSDKCoreKit_Basics (11.0.1):
+    - FBSDKCoreKit_Basics/Basics (= 11.0.1)
+  - FBSDKCoreKit_Basics/Basics (11.0.1)
   - Flutter (1.0.0)
-  - flutter_applovin_max (0.0.1):
+  - flutter_applovin_max (0.1.0):
+    - AppLovinMediationAdColonyAdapter
+    - AppLovinMediationByteDanceAdapter
+    - AppLovinMediationChartboostAdapter
+    - AppLovinMediationFacebookAdapter
+    - AppLovinMediationFyberAdapter
+    - AppLovinMediationGoogleAdapter
+    - AppLovinMediationGoogleAdManagerAdapter
+    - AppLovinMediationInMobiAdapter
+    - AppLovinMediationIronSourceAdapter
+    - AppLovinMediationMaioAdapter
+    - AppLovinMediationMyTargetAdapter
+    - AppLovinMediationSmaatoAdapter
+    - AppLovinMediationTapjoyAdapter
+    - AppLovinMediationTencentGDTAdapter
+    - AppLovinMediationUnityAdsAdapter
+    - AppLovinMediationVungleAdapter
+    - AppLovinMediationYandexAdapter
     - AppLovinSDK
     - Flutter
+  - Fyber_Marketplace_SDK (7.8.1):
+    - Fyber_Marketplace_SDK/IASDKCore (= 7.8.1)
+    - Fyber_Marketplace_SDK/IASDKMRAID (= 7.8.1)
+    - Fyber_Marketplace_SDK/IASDKVideo (= 7.8.1)
+  - Fyber_Marketplace_SDK/IASDKCore (7.8.1)
+  - Fyber_Marketplace_SDK/IASDKMRAID (7.8.1):
+    - Fyber_Marketplace_SDK/IASDKCore
+  - Fyber_Marketplace_SDK/IASDKVideo (7.8.1):
+    - Fyber_Marketplace_SDK/IASDKCore
+  - GDTMobSDK (4.12.3):
+    - GDTMobSDK/GDTMobSDK (= 4.12.3)
+  - GDTMobSDK/GDTMobSDK (4.12.3)
+  - Google-Mobile-Ads-SDK (8.7.0):
+    - GoogleAppMeasurement (< 9.0, >= 7.0)
+    - GoogleUserMessagingPlatform (>= 1.1)
+  - GoogleAppMeasurement (8.3.0):
+    - GoogleAppMeasurement/AdIdSupport (= 8.3.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - GoogleAppMeasurement/AdIdSupport (8.3.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.4)
+    - GoogleUtilities/MethodSwizzler (~> 7.4)
+    - GoogleUtilities/Network (~> 7.4)
+    - "GoogleUtilities/NSData+zlib (~> 7.4)"
+    - nanopb (~> 2.30908.0)
+  - GoogleUserMessagingPlatform (2.0.0)
+  - GoogleUtilities/AppDelegateSwizzler (7.4.3):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.4.3):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (7.4.3):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (7.4.3):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (7.4.3):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.4.3)"
+  - GoogleUtilities/Reachability (7.4.3):
+    - GoogleUtilities/Logger
+  - InMobiSDK/Core (9.1.7)
+  - IronSourceSDK (7.1.6.1)
+  - MaioSDK (1.5.6)
+  - myTargetSDK (5.11.1)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - PromisesObjC (1.2.12)
+  - smaato-ios-sdk (21.6.14):
+    - smaato-ios-sdk/Full (= 21.6.14)
+  - smaato-ios-sdk/Banner (21.6.14):
+    - smaato-ios-sdk/Modules/Banner
+    - smaato-ios-sdk/Modules/Core
+    - smaato-ios-sdk/Modules/RichMedia
+  - smaato-ios-sdk/Full (21.6.14):
+    - smaato-ios-sdk/Banner
+    - smaato-ios-sdk/Interstitial
+    - smaato-ios-sdk/Native
+    - smaato-ios-sdk/RewardedAds
+  - smaato-ios-sdk/InApp (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+  - smaato-ios-sdk/Interstitial (21.6.14):
+    - smaato-ios-sdk/Modules/Interstitial
+    - smaato-ios-sdk/Modules/RichMedia
+    - smaato-ios-sdk/Modules/Video
+  - smaato-ios-sdk/Modules/Banner (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+  - smaato-ios-sdk/Modules/Core (21.6.14)
+  - smaato-ios-sdk/Modules/Interstitial (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+  - smaato-ios-sdk/Modules/Native (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+  - smaato-ios-sdk/Modules/OpenMeasurement (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+  - smaato-ios-sdk/Modules/RewardedAds (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+  - smaato-ios-sdk/Modules/RichMedia (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+    - smaato-ios-sdk/Modules/OpenMeasurement
+  - smaato-ios-sdk/Modules/Video (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+    - smaato-ios-sdk/Modules/OpenMeasurement
+  - smaato-ios-sdk/Native (21.6.14):
+    - smaato-ios-sdk/Modules/Core
+    - smaato-ios-sdk/Modules/Native
+  - smaato-ios-sdk/RewardedAds (21.6.14):
+    - smaato-ios-sdk/Modules/RewardedAds
+    - smaato-ios-sdk/Modules/Video
+  - TapjoySDK (12.8.1)
+  - UnityAds (3.7.2)
+  - VungleSDK-iOS (6.8.1)
+  - YandexMobileAds (2.20.0):
+    - YandexMobileAds/Static (= 2.20.0)
+  - YandexMobileAds/Static (2.20.0):
+    - YandexMobileMetrica (< 4.0.0, >= 3.2.0)
+  - YandexMobileMetrica (3.17.0):
+    - YandexMobileMetrica/Static (= 3.17.0)
+  - YandexMobileMetrica/Static (3.17.0):
+    - YandexMobileMetrica/Static/Core (= 3.17.0)
+    - YandexMobileMetrica/Static/Crashes (= 3.17.0)
+  - YandexMobileMetrica/Static/Core (3.17.0)
+  - YandexMobileMetrica/Static/Crashes (3.17.0):
+    - YandexMobileMetrica/Static/Core
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -11,7 +205,47 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AdColony
+    - Ads-Global
+    - AppLovinMediationAdColonyAdapter
+    - AppLovinMediationByteDanceAdapter
+    - AppLovinMediationChartboostAdapter
+    - AppLovinMediationFacebookAdapter
+    - AppLovinMediationFyberAdapter
+    - AppLovinMediationGoogleAdapter
+    - AppLovinMediationGoogleAdManagerAdapter
+    - AppLovinMediationInMobiAdapter
+    - AppLovinMediationIronSourceAdapter
+    - AppLovinMediationMaioAdapter
+    - AppLovinMediationMyTargetAdapter
+    - AppLovinMediationSmaatoAdapter
+    - AppLovinMediationTapjoyAdapter
+    - AppLovinMediationTencentGDTAdapter
+    - AppLovinMediationUnityAdsAdapter
+    - AppLovinMediationVungleAdapter
+    - AppLovinMediationYandexAdapter
     - AppLovinSDK
+    - ChartboostSDK
+    - FBAudienceNetwork
+    - FBSDKCoreKit_Basics
+    - Fyber_Marketplace_SDK
+    - GDTMobSDK
+    - Google-Mobile-Ads-SDK
+    - GoogleAppMeasurement
+    - GoogleUserMessagingPlatform
+    - GoogleUtilities
+    - InMobiSDK
+    - IronSourceSDK
+    - MaioSDK
+    - myTargetSDK
+    - nanopb
+    - PromisesObjC
+    - smaato-ios-sdk
+    - TapjoySDK
+    - UnityAds
+    - VungleSDK-iOS
+    - YandexMobileAds
+    - YandexMobileMetrica
 
 EXTERNAL SOURCES:
   Flutter:
@@ -20,10 +254,50 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_applovin_max/ios"
 
 SPEC CHECKSUMS:
-  AppLovinSDK: 88d3f2c718983692973d724e71ee8dfca1859fd4
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_applovin_max: 9cfab7ebae8c5ad293d1146ff582a4d85d1194d6
+  AdColony: a79d5e46d893a94f35edadfde3d08f5d8ae55bf9
+  Ads-Global: 68a120508b26bf1a23411cfbf95c8ecf80ba6bf2
+  AppLovinMediationAdColonyAdapter: b6022e0a4e24dfe0ceb57f897ed52bec1cbbf861
+  AppLovinMediationByteDanceAdapter: 54483ce99df456cb17711dd62300a6b1a109a725
+  AppLovinMediationChartboostAdapter: 9ba09065a0c4dc6f5ecc392482e44b839de7f894
+  AppLovinMediationFacebookAdapter: c11162a2c96f4bb6b49b4a6a0f09036f2f450330
+  AppLovinMediationFyberAdapter: b28aab40f2ad14a87ca4471aa98bbcbac92fa86d
+  AppLovinMediationGoogleAdapter: 7daf740924e7b4b24185ebefc448ad3cb3da14ad
+  AppLovinMediationGoogleAdManagerAdapter: d148367aebc5b33ccc4d3d1f0c4c73f01dd3ccab
+  AppLovinMediationInMobiAdapter: 26c5012b3c777e439b7253d232c787d574562566
+  AppLovinMediationIronSourceAdapter: d3b7ba2d00ee610f52bfc9b73d688ebd0e5f735d
+  AppLovinMediationMaioAdapter: 855084608a40cd1255ba7b70b1be274256e99fc1
+  AppLovinMediationMyTargetAdapter: a14d198936b54de65b848696ec70047f9c50007d
+  AppLovinMediationSmaatoAdapter: 55194f55d6ca3e9a597bd6e42a9255ed0c34fe1c
+  AppLovinMediationTapjoyAdapter: 0b0625cc676afb462b4f10d3c7cb75d96a6013b1
+  AppLovinMediationTencentGDTAdapter: bde9bc5788c1220dfb6ca4acdf933d9311dd4093
+  AppLovinMediationUnityAdsAdapter: aa4a7b26b644a28fa791f64464affd3fd40b606a
+  AppLovinMediationVungleAdapter: 55f6cc2fa143ee65dd4376ba908101b5931b6cc6
+  AppLovinMediationYandexAdapter: a77364baf1cda54d6cb81d74b57d06d1093ed4cd
+  AppLovinSDK: 3bbfef1e3ac84d85f556fda26e50f5a70230b970
+  ChartboostSDK: 7c12ef46358d70703bcc978a185d9ac4372065fb
+  FBAudienceNetwork: 9a5f277d6ed36a46354a045c46a4858b47407a72
+  FBSDKCoreKit_Basics: 06780a4a12e16596bde8406add02c6aa1bf38616
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_applovin_max: 11e996b4a79625854972f6b9e28a25124bf62e92
+  Fyber_Marketplace_SDK: e50a89023afd4f59ad51f35a188484fc59ac94d3
+  GDTMobSDK: 1e245a7a1f3960516fa8f5fb1038a349931dbd90
+  Google-Mobile-Ads-SDK: e242f463fdb8564ac3f11847a30215a0e042c934
+  GoogleAppMeasurement: de70802583dedceb0bca18172b345307e8f410b8
+  GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
+  GoogleUtilities: 45dbb24a7f351d69d0a601482b39ad6c32e30dab
+  InMobiSDK: 4b46bffcc222a894f1550a0d11e2895f4f9c906b
+  IronSourceSDK: bd82f7c69f17effbdec0a09e9426304427490da0
+  MaioSDK: 5a93c2209c02c4a8bddfd5da4c9a1f900bd60573
+  myTargetSDK: 939cc905336439899c3fb310b12eaaf361d833e2
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  smaato-ios-sdk: ef8ac13b2aca1bd9ecf9dc64fde9b21ce3cc2301
+  TapjoySDK: 6d344dfb0cd205014c9286580d5c97857b170402
+  UnityAds: cca7e2191591e0bb5d45231f012a2c8722c3e686
+  VungleSDK-iOS: 0405589c8626b2511dd57214a17e0d65e0d2f424
+  YandexMobileAds: 1c1e2592d71bdbbf1a4617dd8619ff12da06bfb8
+  YandexMobileMetrica: 9e713c16bb6aca0ba63b84c8d7b8b86d32f4ecc4
 
-PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+PODFILE CHECKSUM: 6fdd8a8a766b9af82ee9dcd89b2adc9144e2b847
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
