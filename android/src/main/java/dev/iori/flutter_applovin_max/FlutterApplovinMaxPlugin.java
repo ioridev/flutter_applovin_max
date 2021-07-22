@@ -19,7 +19,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.common.StandardMethodCodec;
-
+import io.flutter.plugin.platform.PlatformViewRegistry;
 
 
 public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -36,6 +36,7 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+        this.RegistrarBanner(flutterPluginBinding.getFlutterEngine().getPlatformViewsController().getRegistry());
         this.onAttachedToEngine(flutterPluginBinding.getApplicationContext(), flutterPluginBinding.getBinaryMessenger());
     }
 
@@ -59,6 +60,10 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
     }
 
     public FlutterApplovinMaxPlugin() {
+    }
+
+    public void RegistrarBanner(PlatformViewRegistry registry){
+        registry.registerViewFactory("/Banner", new BannerFactory());
     }
 
     @Override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_applovin_max/flutter_applovin_max.dart';
+import 'package:flutter_applovin_max/banner.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,7 +60,8 @@ class _MyAppState extends State<MyApp> {
               const Spacer(),
             ],
           )
-        )
+        ),
+        bottomNavigationBar: BannerMaxView((AppLovinAdListener event) => print(event), BannerAdSize.banner, "YOUR_AD_UNIT_ID"),
       ),
     );
   }
