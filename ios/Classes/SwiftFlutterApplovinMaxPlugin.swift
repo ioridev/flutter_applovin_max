@@ -9,9 +9,9 @@ public class SwiftFlutterApplovinMaxPlugin:  NSObject, FlutterPlugin {
     private var interMax = ALMAXInterstitial();
 
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "flutter_applovin_max", binaryMessenger: registrar.messenger())
+        globalMethodChannel = FlutterMethodChannel(name: "flutter_applovin_max", binaryMessenger: registrar.messenger())
         let instance = SwiftFlutterApplovinMaxPlugin()
-        registrar.addMethodCallDelegate(instance, channel: channel)
+        registrar.addMethodCallDelegate(instance, channel: globalMethodChannel!)
         ALSdk.shared()!.mediationProvider = ALMediationProviderMAX
         ALSdk.shared()!.initializeSdk(completionHandler: { configuration in
             // AppLovin SDK is initialized, start loading ads now or later if ad gate is reached
