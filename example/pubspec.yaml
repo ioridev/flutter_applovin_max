@@ -7,10 +7,12 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.12.0"
+
 
 dependencies:
   flutter:
-    sdk: flutter
+    sdk: flutter 
 
   flutter_applovin_max:
     # When depending on this package from a real application you should use:
