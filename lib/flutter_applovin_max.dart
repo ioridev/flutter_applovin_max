@@ -34,9 +34,9 @@ class FlutterApplovinMax {
     'UserRewarded': AppLovinAdListener.onUserRewarded,
   };
 
-  static Future<void> init(String unitId) async {
+  static Future<void> initRewardAd(String unitId) async {
     try {
-      await _channel.invokeMethod<void>('Init', <String, dynamic>{'UnitId': unitId});
+      await _channel.invokeMethod<void>('InitRewardAd', <String, dynamic>{'UnitId': unitId});
     } catch (e) {
       print(e.toString());
     }
@@ -51,8 +51,29 @@ class FlutterApplovinMax {
     }
   }
 
-  static Future<bool?> isLoaded(AppLovinListener listener) async {
-    return await _channel.invokeMethod('IsLoaded');
+  static Future<bool?> isRewardLoaded(AppLovinListener listener) async {
+    return await _channel.invokeMethod('IsRewardLoaded');
+  }
+
+  static Future<void> initInterstitialAd(String unitId) async {
+    try {
+      await _channel.invokeMethod<void>('InitInterAd', <String, dynamic>{'UnitId': unitId});
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  static Future<void> showInterstitialVideo(AppLovinListener listener) async {
+    try {
+      _channel.setMethodCallHandler((MethodCall call) async => handleMethod(call, listener));
+      await _channel.invokeMethod<void>('ShowInterVideo');
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  static Future<bool?> isInterstitialLoaded(AppLovinListener listener) async {
+    return await _channel.invokeMethod('IsInterLoaded');
   }
 
   static Future<void> handleMethod(MethodCall call, AppLovinListener listener) async {
