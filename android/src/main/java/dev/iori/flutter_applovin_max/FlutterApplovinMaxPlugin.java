@@ -74,8 +74,8 @@ public class FlutterApplovinMaxPlugin implements FlutterPlugin, MethodCallHandle
             switch (call.method) {
                 /* Reward */
                 case "InitSdk":
-                    AppLovinSdk.getInstance(context).setMediationProvider(AppLovinMediationProvider.MAX);
-                    AppLovinSdk.initializeSdk(context, new AppLovinSdk.SdkInitializationListener() {
+                    AppLovinSdk.getInstance(activity).setMediationProvider(AppLovinMediationProvider.MAX);
+                    AppLovinSdk.initializeSdk(activity, new AppLovinSdk.SdkInitializationListener() {
                         @Override
                         public void onSdkInitialized(final AppLovinSdkConfiguration configuration) {
                         }
