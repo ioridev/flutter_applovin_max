@@ -110,27 +110,9 @@ IOS info.plist
 ```
 ## Preparing Mediated Networks  
 ### IOS
-The following SDK is included in the ios plugin.　　
-```  
-AdColony  
-Facebook  
-InMobi  
-ByteDance  
-Smaato  
-Tapjoy  
-Vungle  
-Chartboost  
-Fyber  
-Google  
-IronSource  
-nMaio  
-MyTarget  
-TencentGDT  
-UnityAds  
-Yandex  
-```
+[https://dash.applovin.com/documentation/mediation/ios/mediation-adapters](https://dash.applovin.com/documentation/mediation/ios/mediation-adapters).
+
 ### Android
-For Android, refer to the document and add it to the app  
 [https://dash.applovin.com/documentation/mediation/android/mediation-adapters](https://dash.applovin.com/documentation/mediation/android/mediation-adapters)  
 #### important point  
 When installing the iron source, the following error is output.  
