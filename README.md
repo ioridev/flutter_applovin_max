@@ -1,6 +1,8 @@
 # flutter_applovin_max
-   <b>Welcomes contribution from everyone.</b>. 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ioridev)
+   <b>Welcomes contribution from everyone.</b>  
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ioridev)  
+
 Flutter plugin for showing [applovin MAX  mediation](https://www.applovin.com/max/) ads rewardvideo (Android & Ios).
 
 MAX is AppLovin's in-app monetization solution.
