@@ -8,6 +8,8 @@ import androidx.annotation.NonNull;
 
 import com.applovin.sdk.AppLovinMediationProvider;
 import com.applovin.sdk.AppLovinSdk;
+import com.applovin.sdk.AppLovinSdkConfiguration;
+
 import io.flutter.Log;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
@@ -22,7 +24,7 @@ import io.flutter.plugin.common.StandardMethodCodec;
 import io.flutter.plugin.platform.PlatformViewRegistry;
 
 
-public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandler, ActivityAware {
+public class FlutterApplovinMaxPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
     private static FlutterApplovinMaxPlugin instance;
     private static RewardedVideo instanceReward;
     private static InterstitialVideo instanceInter;
@@ -62,7 +64,7 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
     public FlutterApplovinMaxPlugin() {
     }
 
-    public void RegistrarBanner(PlatformViewRegistry registry){
+    public void RegistrarBanner(PlatformViewRegistry registry) {
         registry.registerViewFactory("/Banner", new BannerFactory());
     }
 
@@ -71,14 +73,21 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
         try {
             switch (call.method) {
                 /* Reward */
+                case "InitSdk":
+                    AppLovinSdk.getInstance(activity).setMediationProvider(AppLovinMediationProvider.MAX);
+                    AppLovinSdk.initializeSdk(activity, new AppLovinSdk.SdkInitializationListener() {
+                        @Override
+                        public void onSdkInitialized(final AppLovinSdkConfiguration configuration) {
+                        }
+                    });
+                    break;
                 case "InitRewardAd":
-                    AppLovinSdk.getInstance(context).setMediationProvider( AppLovinMediationProvider.MAX );
                     String unitId = call.argument("UnitId").toString();
                     instanceReward.Init(unitId);
                     result.success(Boolean.TRUE);
                     break;
-                    case "ShowRewardVideo":
-                        instanceReward.Show();
+                case "ShowRewardVideo":
+                    instanceReward.Show();
                     result.success(Boolean.TRUE);
                     break;
                 case "IsRewardLoaded":
@@ -87,7 +96,6 @@ public class FlutterApplovinMaxPlugin  implements FlutterPlugin, MethodCallHandl
                     break;
                 /* Inter */
                 case "InitInterAd":
-                    AppLovinSdk.getInstance(context).setMediationProvider( AppLovinMediationProvider.MAX );
                     instanceInter.Init(call.argument("UnitId").toString());
                     result.success(Boolean.TRUE);
                     break;
