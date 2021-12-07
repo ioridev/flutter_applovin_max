@@ -1,3 +1,5 @@
+## 2.1.0 - 2021-12-07
+Only AppLovin ads
 ## 2.0.1 - 2021-12-07
 initialize sdk with context in order to support facebook adapter
 ## 2.0.0 - 2021-08-21
