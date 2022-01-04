@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dvird",
+      "name": "dvird",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42498461?v=4",
+      "profile": "https://github.com/dvird",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "flutter_applovin_max",
+  "projectOwner": "ioridev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
