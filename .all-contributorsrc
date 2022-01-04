@@ -31,6 +31,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "fujiser",
+      "name": "fujiser",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51233223?v=4",
+      "profile": "https://github.com/fujiser",
+      "contributions": [
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
