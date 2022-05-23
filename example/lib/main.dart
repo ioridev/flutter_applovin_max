@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_applovin_max/flutter_applovin_max.dart';
 import 'package:flutter_applovin_max/banner.dart';
+import 'package:flutter_applovin_max/flutter_applovin_max.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +14,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     FlutterApplovinMax.initRewardAd('YOUR_AD_UNIT_ID');
     FlutterApplovinMax.initInterstitialAd('YOUR_AD_UNIT_ID');
+    FlutterApplovinMax.setUser('TestUserId');
     super.initState();
   }
 
