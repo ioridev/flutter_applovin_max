@@ -42,6 +42,14 @@ class FlutterApplovinMax {
     }
   }
 
+  static Future<void> setUser(String userId) async {
+    try {
+      await _channel.invokeMethod<void>('SetUser', <String, dynamic>{'UserId': userId});
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   static Future<void> initRewardAd(String unitId) async {
     try {
       await _channel.invokeMethod<void>('InitRewardAd', <String, dynamic>{'UnitId': unitId});

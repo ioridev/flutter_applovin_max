@@ -20,6 +20,11 @@ public class SwiftFlutterApplovinMaxPlugin:  NSObject, FlutterPlugin {
 
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
+        case "SetUser":
+             if let args = call.arguments as? Dictionary<String, Any>,
+             let userId = args["UserId"] as? String {
+                  ALSdk.shared()!.userIdentifier = userId
+             }
         /*Reward*/
         case "InitRewardAd":
             rewardMax.initRewardedApplovin(call)
