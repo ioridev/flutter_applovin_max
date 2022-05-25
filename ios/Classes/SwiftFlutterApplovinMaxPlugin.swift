@@ -27,8 +27,8 @@ public class SwiftFlutterApplovinMaxPlugin: NSObject, FlutterPlugin {
       {
         ALSdk.shared()!.userIdentifier = userId
       }
-    case "SetPrivaxy":
-      if let args = call.arguments as? [Bool: Any],
+    case "SetPrivacy":
+      if let args = call.arguments as? [String: Any],
         let hasConsent = args["HasConsent"] as? Bool,
         let isAgeRestricted = args["IsAgeRestricted"] as? Bool,
         let doNotSell = args["DoNotSell"] as? Bool
