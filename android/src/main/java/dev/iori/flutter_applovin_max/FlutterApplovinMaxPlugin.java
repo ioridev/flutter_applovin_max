@@ -72,6 +72,15 @@ public class FlutterApplovinMaxPlugin implements FlutterPlugin, MethodCallHandle
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
         try {
             switch (call.method) {
+                case "SetUser":
+                    String userId = call.argument("UserId").toString();
+                    AppLovinSdk.getInstance( context ).setUserIdentifier( userId );
+                    break;
+                case "SetPrivacy":
+                    AppLovinPrivacySettings.setHasUserConsent( call.argument("HasConsent"), context );
+                    AppLovinPrivacySettings.setIsAgeRestrictedUser( call.argument("IsAgeRestricted"), context );
+                    AppLovinPrivacySettings.setDoNotSell( call.argument("DoNotSell"), context );
+                    break;
                 /* Reward */
                 case "InitSdk":
                     AppLovinSdk.getInstance(activity).setMediationProvider(AppLovinMediationProvider.MAX);
