@@ -1,6 +1,6 @@
 name: flutter_applovin_max
 description: Flutter plugin for showing applovin MAX mediation ads rewardvideo (Android & Ios).MAX is AppLovin's in-app monetization solution.
-version: 2.1.1
+version: 2.1.2
 # author: ioridev<iori@iori.dev>
 homepage: https://github.com/ioridev/flutter_applovin_max
 
@@ -10,7 +10,7 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter 
+    sdk: flutter
 
 dev_dependencies:
   pedantic_mono: ^1.11.0+2
