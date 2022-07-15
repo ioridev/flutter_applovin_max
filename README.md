@@ -5,7 +5,7 @@
 
 ---
 
-🎉The official plugin has finally been released!🎉
+   <b>🎉The official plugin has finally been released!🎉</b>  
 
 [https://github.com/AppLovin/AppLovin-MAX-Flutter](https://github.com/AppLovin/AppLovin-MAX-Flutter)  
 We recommend using this plugin in the future.
