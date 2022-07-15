@@ -6,7 +6,7 @@
 ---
 
    <b>🎉The official plugin has finally been released!🎉</b>  
-
+[pub.dev applovin_max](https://pub.dev/packages/applovin_max)  
 [https://github.com/AppLovin/AppLovin-MAX-Flutter](https://github.com/AppLovin/AppLovin-MAX-Flutter)  
 We recommend using this plugin in the future.
 
